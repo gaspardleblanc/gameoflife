@@ -2,6 +2,7 @@ const gridElement = document.getElementById('grid');
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const clearButton = document.getElementById('clear');
+const themeToggle = document.getElementById('theme-toggle');
 
 const rows = 30;
 const cols = 30;
@@ -84,6 +85,10 @@ stopButton.addEventListener('click', () => {
 clearButton.addEventListener('click', () => {
     grid = Array.from({ length: rows }, () => Array(cols).fill(false));
     updateGridDisplay();
+});
+
+themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
 });
 
 createGrid();
